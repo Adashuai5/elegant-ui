@@ -1,9 +1,11 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./index.css";
+import "./index.scss";
 import { createWebHashHistory, createRouter } from "vue-router";
-import Ada from "./components/Ada.vue";
-import Ada2 from "./components/Ada2.vue";
+import Home from "./views/Home.vue";
+import Doc from "./views/Doc.vue";
+import Icon from "./icons/Icon.vue";
+import "//at.alicdn.com/t/font_2113925_3155wx8fkxl.js";
 
 const history = createWebHashHistory();
 const router = createRouter({
@@ -11,15 +13,16 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: Ada,
+      component: Home,
     },
     {
-      path: "/two",
-      component: Ada2,
+      path: "/doc",
+      component: Doc,
     },
   ],
 });
 
 const app = createApp(App);
+app.component(Icon.name, Icon);
 app.use(router);
 app.mount("#app");

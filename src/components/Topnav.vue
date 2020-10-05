@@ -1,8 +1,8 @@
 <template>
   <div class="topnav">
-    <div class="logo">
+    <div class="logo" @click="toggleMenu">
       <SvgIcon iconLink="logo" />
-      <span>legant</span>
+      <span v-if="menuVisible">legant</span>
     </div>
     <ul class="menu">
       <li>菜单</li>
@@ -11,8 +11,19 @@
 </template>
 
 <script lang="ts">
+import { inject, Ref } from "vue";
 export default {
   name: "Topnav",
+  setup() {
+    const menuVisible = inject<Ref<boolean>>("menu-visible");
+    const toggleMenu = () => {
+      menuVisible.value = !menuVisible.value;
+    };
+    return {
+      menuVisible,
+      toggleMenu,
+    };
+  },
 };
 </script>
 
@@ -31,6 +42,7 @@ $color: #ddf0ed;
     font-weight: 600;
     font-style: italic;
     line-height: 16px;
+    cursor: pointer;
   }
   > .menu {
     display: flex;

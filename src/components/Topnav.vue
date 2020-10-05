@@ -1,10 +1,10 @@
 <template>
   <div class="topnav">
     <SvgIcon iconLink="returns" className="toggleMenu" @click="toggleMenu" />
-    <div class="logo">
+    <router-link class="logo" to="/">
       <SvgIcon iconLink="logo" />
       <span class="hide">legant</span>
-    </div>
+    </router-link>
     <ul class="menu hide">
       <li>菜单</li>
     </ul>
@@ -32,7 +32,10 @@ export default {
 $color: #ddf0ed;
 .topnav {
   background: $color;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

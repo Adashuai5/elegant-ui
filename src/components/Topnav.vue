@@ -1,10 +1,11 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleMenu">
+    <SvgIcon iconLink="returns" className="toggleMenu" @click="toggleMenu" />
+    <div class="logo">
       <SvgIcon iconLink="logo" />
-      <span v-if="menuVisible">legant</span>
+      <span class="hide">legant</span>
     </div>
-    <ul class="menu">
+    <ul class="menu hide">
       <li>菜单</li>
     </ul>
   </div>
@@ -31,9 +32,11 @@ export default {
 $color: #ddf0ed;
 .topnav {
   background: $color;
-  display: flex;
-  padding: 16px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
   z-index: 10;
   > .logo {
     max-width: 6em;
@@ -42,7 +45,6 @@ $color: #ddf0ed;
     font-weight: 600;
     font-style: italic;
     line-height: 16px;
-    cursor: pointer;
   }
   > .menu {
     display: flex;
@@ -50,6 +52,27 @@ $color: #ddf0ed;
     flex-wrap: nowrap;
     > li {
       margin: 0 1em;
+    }
+  }
+  > .toggleMenu {
+    display: none;
+  }
+  @media (max-width: 500px) {
+    > .toggleMenu {
+      width: 1.5em;
+      height: 1.5em;
+      display: inline-block;
+      position: absolute;
+      left: 1em;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    .hide {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
     }
   }
 }

@@ -2,7 +2,7 @@
   <div>
     <Topnav />
     <div class="banner">
-      <h1>elegant UI</h1>
+      <h1>Elegant UI</h1>
       <h1>一个优雅的 UI 组件库</h1>
       <p class="actions">
         <a href="//github.com/Adashuai5/elegant-ui/">Github</a>

@@ -1,10 +1,10 @@
 <p align="center">
   <a href="/">
-    <img width="400" src="./elegant-ui.png">
+    <img width="400" src="./src/assets/Logo.png">
   </a>
 </p>
 
-<h1 align="center">elegant UI</h1>
+<h1 align="center">Elegant UI</h1>
 
 <div align="center">
 

@@ -1,4 +1,5 @@
 <template>
+  <h1>Switch 示例</h1>
   <Switch v-model:value="checked" />
 </template>
 

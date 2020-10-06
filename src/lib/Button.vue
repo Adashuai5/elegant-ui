@@ -1,16 +1,33 @@
 <template>
-  <button class="elegant-button" :class="{ [`elegant-theme-${theme}`]: theme }">
+  <button class="elegant-button" :class="classes">
     <slot />
   </button>
 </template>
 
 <script lang="ts">
+import { computed } from "vue";
 export default {
   props: {
     theme: {
       type: String,
       default: "button",
     },
+    size: {
+      type: String,
+      default: "normal",
+    },
+  },
+  setup(props) {
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return {
+        [`elegant-theme-${theme}`]: theme,
+        [`elegant-size-${size}`]: size,
+      };
+    });
+    return {
+      classes,
+    };
   },
 };
 </script>
@@ -72,6 +89,17 @@ $radius: 4px;
     &:focus {
       background: darken(white, 5%);
     }
+  }
+
+  &.elegant-size-big {
+    font-size: 20px;
+    height: 44px;
+    padding: 0 16px;
+  }
+  &.elegant-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 8px;
   }
 }
 </style>

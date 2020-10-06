@@ -8,6 +8,22 @@
     <Button theme="link">你好</Button>
     <Button theme="text">你好</Button>
   </div>
+  <h3>示例2</h3>
+  <div>
+    <Button size="big">大大大</Button>
+    <Button>普普通</Button>
+    <Button size="small">小小小</Button>
+  </div>
+  <div>
+    <Button theme="link" size="big">大大大</Button>
+    <Button theme="link">普普通</Button>
+    <Button size="small" theme="link">小小小</Button>
+  </div>
+  <div>
+    <Button size="big" theme="text">大大大</Button>
+    <Button theme="text">普普通</Button>
+    <Button size="small" theme="text">小小小</Button>
+  </div>
 </template>
 
 <script lang="ts">

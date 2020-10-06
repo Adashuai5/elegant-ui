@@ -2,7 +2,7 @@
   <div class="topnav">
     <SvgIcon iconLink="returns" className="toggleMenu" @click="toggleMenu" />
     <router-link class="logo" to="/">
-      <SvgIcon iconLink="logo" />
+      <SvgIcon iconLink="logo" className="logoE"/>
       <span class="hide">legant</span>
     </router-link>
     <ul class="menu hide">
@@ -48,6 +48,10 @@ $color: #ddf0ed;
     font-weight: 600;
     font-style: italic;
     line-height: 16px;
+    > .logoE {
+      width: 1.3em;
+      height: 1.3em;
+    }
   }
   > .menu {
     display: flex;

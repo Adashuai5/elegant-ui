@@ -11,7 +11,7 @@ export default {
   },
   setup(props, context) {
     const toggle = () => {
-      context.emit("input", !props.value);
+      context.emit("update:value", !props.value);
     };
     return {
       toggle,
@@ -30,8 +30,9 @@ button {
   background: grey;
   border-radius: $h/2;
   position: relative;
+  cursor: pointer;
 
-  span {
+  > span {
     position: absolute;
     top: 2px;
     left: 2px;
@@ -39,15 +40,28 @@ button {
     width: $h2;
     background: white;
     border-radius: $h2 / 2;
-    transition: left 250ms;
+    transition: all 250ms;
+  }
+
+  &:active {
+    > span {
+      width: $h2 + 4px;
+    }
   }
 
   &.checked {
-    background: blue;
+    background: #1890ff;
   }
 
   &.checked > span {
     left: calc(100% - #{$h2} - 2px);
+  }
+
+  &.checked:active {
+    > span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
   }
 
   &:focus {

@@ -1,6 +1,6 @@
 <template>
-  <button class="elegant-button" :class="classes">
-    <slot />
+  <button class="elegant-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="elegant-loadingIndicator"></span> <slot />
   </button>
 </template>
 
@@ -19,6 +19,14 @@ export default {
     level: {
       type: String,
       default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -43,6 +51,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $red: red;
+$grey: grey;
 $radius: 4px;
 .elegant-button {
   box-sizing: border-box;
@@ -88,6 +97,23 @@ $radius: 4px;
     font-size: 12px;
     height: 20px;
     padding: 0 8px;
+  }
+
+  &.elegant-theme-button {
+    &[disabled] {
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+
+  &.elegant-theme-button,
+  &.elegant-theme-link,
+  &.elegant-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
   }
 
   &.elegant-theme-button {
@@ -153,6 +179,27 @@ $radius: 4px;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+
+  > .elegant-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: elegant-spin 1s infinite linear;
+  }
+
+  @keyframes elegant-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 }

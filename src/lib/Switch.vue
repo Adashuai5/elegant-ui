@@ -1,5 +1,9 @@
 <template>
-  <button :class="{ checked: value }" @click="toggle">
+  <button
+    class="elegant-switch"
+    :class="{ ['elegant-checked']: value }"
+    @click="toggle"
+  >
     <span></span>
   </button>
 </template>
@@ -20,10 +24,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.elegant-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -49,15 +53,15 @@ button {
     }
   }
 
-  &.checked {
+  &.elegant-checked {
     background: #1890ff;
   }
 
-  &.checked > span {
+  &.elegant-checked > span {
     left: calc(100% - #{$h2} - 2px);
   }
 
-  &.checked:active {
+  &.elegant-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;

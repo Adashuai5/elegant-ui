@@ -1,5 +1,5 @@
 <template>
-  <template v-if="visible">
+  <teleport :to="teleportTo" v-if="visible">
     <div class="elegant-dialog-overlay" @click="onClickOverlay"></div>
     <div class="elegant-dialog-wrapper">
       <div class="elegant-dialog">
@@ -16,8 +16,7 @@
         </footer>
       </div>
     </div>
-  </template>
-</template>
+  </teleport>
 </template>
 
 <script lang="ts">
@@ -25,6 +24,7 @@ import Button from "./Button.vue";
 export default {
   components: { Button },
   props: {
+    teleportTo: { type: String, default: "body" },
     visible: { type: Boolean, default: false },
     closeOnClickOverlay: { type: Boolean, default: true },
     ok: { type: Function },

@@ -4,6 +4,7 @@
   <Button @click="toggle">点击打开 Dialog</Button>
   <Dialog
     v-model:visible="visible"
+    teleportTo="#app"
     :closeOnClickOverlay="false"
     :ok="ok"
     :cancel="cancel"

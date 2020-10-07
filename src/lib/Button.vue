@@ -183,11 +183,11 @@ $radius: 4px;
   }
 
   > .elegant-loadingIndicator {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     display: inline-block;
     margin-right: 4px;
-    border-radius: 8px;
+    border-radius: 16px;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;

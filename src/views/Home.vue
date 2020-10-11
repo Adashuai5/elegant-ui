@@ -13,17 +13,17 @@
   <div class="features">
     <ul>
       <li>
-        <SvgIcon iconLink="Vue" className="features-icon" />
+        <Icon iconLink="Vue" className="features-icon" />
         <h3>基于 Vue 3</h3>
         <p>快人一步使用 Vue 3 Composition API</p>
       </li>
       <li>
-        <SvgIcon iconLink="typescript" className="features-icon" />
+        <Icon iconLink="typescript" className="features-icon" />
         <h3>基于 TypeScript</h3>
         <p>源代码采用 TypeScript 书写（非严格检查）</p>
       </li>
       <li>
-        <SvgIcon iconLink="easy" className="features-icon" />
+        <Icon iconLink="easy" className="features-icon" />
         <h3>优雅简洁</h3>
         <p>每个组件的源代码都简洁易读</p>
       </li>
@@ -33,9 +33,10 @@
 </template>
 
 <script lang="ts">
+import Icon from "../components/Icon.vue";
 import Topnav from "../components/Topnav.vue";
 export default {
-  components: { Topnav },
+  components: { Topnav, Icon },
 };
 </script>
 

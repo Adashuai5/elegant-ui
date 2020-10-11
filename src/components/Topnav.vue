@@ -1,8 +1,8 @@
 <template>
   <div class="topnav">
-    <SvgIcon iconLink="returns" className="toggleMenu" @click="toggleMenu" />
+    <Icon iconLink="returns" className="toggleMenu" @click="toggleMenu" />
     <router-link class="logo" to="/">
-      <SvgIcon iconLink="logo" className="logoE" />
+      <Icon iconLink="logo" className="logoE" />
       <span class="hide">legant</span>
     </router-link>
     <ul class="menu hide">
@@ -14,9 +14,11 @@
 </template>
 
 <script lang="ts">
+import Icon from "./Icon.vue";
 import { inject, Ref } from "vue";
 export default {
   name: "Topnav",
+  components: { Icon },
   setup() {
     const menuVisible = inject<Ref<boolean>>("menu-visible");
     const toggleMenu = () => {

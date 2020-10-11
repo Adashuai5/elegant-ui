@@ -13,7 +13,6 @@ a {
   text-decoration: none;
   color: inherit;
   &:hover {
-    border-bottom: 1px solid;
     cursor: pointer;
   }
 }
@@ -30,6 +29,9 @@ h6 {
 body {
   font-size: 16px;
   // font-family https://github.com/zenozeng/fonts.css/
+
+  line-height: 2;
+  color: #3f475c;
   font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
     "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB",
     "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN",

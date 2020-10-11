@@ -2,11 +2,13 @@
   <div class="topnav">
     <SvgIcon iconLink="returns" className="toggleMenu" @click="toggleMenu" />
     <router-link class="logo" to="/">
-      <SvgIcon iconLink="logo" className="logoE"/>
+      <SvgIcon iconLink="logo" className="logoE" />
       <span class="hide">legant</span>
     </router-link>
     <ul class="menu hide">
-      <li>菜单</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -29,9 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #ddf0ed;
+$color: #1296d8;
+
 .topnav {
-  background: $color;
   position: fixed;
   top: 0;
   left: 0;
@@ -41,29 +43,40 @@ $color: #ddf0ed;
   align-items: center;
   padding: 16px;
   z-index: 10;
+  color: $color;
+
   > .logo {
     max-width: 6em;
     margin-right: auto;
-    color: #1296db;
     font-weight: 600;
     font-style: italic;
     line-height: 16px;
+
     > .logoE {
       width: 1.3em;
       height: 1.3em;
     }
   }
+
   > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+
     > li {
       margin: 0 1em;
+
+      &:hover,
+      &:focus {
+        color: darken($color, 10%);
+      }
     }
   }
+
   > .toggleMenu {
     display: none;
   }
+
   @media (max-width: 500px) {
     > .toggleMenu {
       width: 1.5em;
@@ -75,9 +88,11 @@ $color: #ddf0ed;
       transform: translateY(-50%);
       cursor: pointer;
     }
+
     .hide {
       display: none;
     }
+
     > .logo {
       margin: 0 auto;
     }

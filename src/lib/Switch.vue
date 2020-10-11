@@ -27,6 +27,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
+$color: #1296d8;
 .elegant-switch {
   height: $h;
   width: $h * 2;
@@ -54,7 +55,7 @@ $h2: $h - 4px;
   }
 
   &.elegant-checked {
-    background: #1890ff;
+    background: $color;
   }
 
   &.elegant-checked > span {

@@ -1,15 +1,35 @@
 <template>
-  <div>
+  <div class="topnavAndBanner">
     <Topnav />
     <div class="banner">
-      <h1>Elegant UI</h1>
-      <h1>一个优雅的 UI 组件库</h1>
+      <h1><b>Elegant UI </b></h1>
+      <h3>是的，一个优雅的 UI 组件库</h3>
       <p class="actions">
         <a href="//github.com/Adashuai5/elegant-ui/">Github</a>
         <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
+  <div class="features">
+    <ul>
+      <li>
+        <SvgIcon iconLink="Vue" className="features-icon" />
+        <h3>基于 Vue 3</h3>
+        <p>快人一步使用 Vue 3 Composition API</p>
+      </li>
+      <li>
+        <SvgIcon iconLink="typescript" className="features-icon" />
+        <h3>基于 TypeScript</h3>
+        <p>源代码采用 TypeScript 书写（非严格检查）</p>
+      </li>
+      <li>
+        <SvgIcon iconLink="easy" className="features-icon" />
+        <h3>优雅简洁</h3>
+        <p>每个组件的源代码都简洁易读</p>
+      </li>
+    </ul>
+  </div>
+  <footer>MIT Licensed | Copyright © 2020 Zhou Yuanda</footer>
 </template>
 
 <script lang="ts">
@@ -20,26 +40,96 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #c7ffec;
-.banner {
-  padding: 100px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: $color;
-  > .actions {
-    padding: 8px 0;
-    a {
-      margin: 0 8px;
-      background: #fff;
-      display: inline-block;
-      $h: 28px;
-      height: $h;
-      line-height: $h;
-      border-radius: $h/2;
-      padding: 0 8px;
+$blue: #1296d8;
+.topnavAndBanner {
+  background: linear-gradient(
+    145deg,
+    rgba(245, 253, 255, 1) 0%,
+    rgba(237, 251, 255, 1) 100%
+  );
+  border-bottom-left-radius: 13%;
+  border-bottom-right-radius: 13%;
+
+  .banner {
+    padding: 80px 0 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    > .actions {
+      padding: 16px 0;
+
+      a {
+        margin: 0 14px;
+        color: #fff;
+        background: $blue;
+        display: inline-block;
+        padding: 3px 16px;
+        border-radius: 4px;
+
+        &:hover,
+        &:focus {
+          background: darken($blue, 10%);
+        }
+      }
     }
   }
+}
+
+.features {
+  margin: 64px auto;
+  width: 400px;
+  min-height: calc(80vh - 400px);
+
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      width: 400px;
+      margin: 16px 0;
+      display: grid;
+      align-items: center;
+      justify-content: start;
+      align-content: space-between;
+      grid-template-areas:
+        "icon title"
+        "icon text";
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
+
+      > .features-icon {
+        grid-area: icon;
+        width: 64px;
+        height: 64px;
+      }
+
+      > h3 {
+        grid-area: title;
+        font-size: 28px;
+      }
+
+      > p {
+        grid-area: text;
+      }
+    }
+  }
+}
+
+footer {
+  bottom: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

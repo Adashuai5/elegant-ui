@@ -20,7 +20,7 @@
       <li>
         <Icon iconLink="typescript" className="features-icon" />
         <h3>基于 TypeScript</h3>
-        <p>源代码采用 TypeScript 书写（非严格检查）</p>
+        <p>源代码采用 TypeScript 书写</p>
       </li>
       <li>
         <Icon iconLink="easy" className="features-icon" />
@@ -80,23 +80,13 @@ $blue: #1296d8;
 
 .features {
   margin: 64px auto;
-  width: 400px;
-  min-height: calc(80vh - 400px);
-
-  @media (min-width: 800px) {
-    width: 800px;
-  }
-
-  @media (min-width: 1200px) {
-    width: 1200px;
-  }
+  padding: 0 16px;
 
   > ul {
     display: flex;
     flex-wrap: wrap;
 
     > li {
-      width: 400px;
       margin: 16px 0;
       display: grid;
       align-items: center;
@@ -124,6 +114,26 @@ $blue: #1296d8;
       }
     }
   }
+
+  @media (min-width: 768px) {
+    width: 768px;
+
+    > ul {
+      > li {
+        width: 50%;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+
+    > ul {
+      > li {
+        width: 33.33%;
+      }
+    }
+  }
 }
 
 footer {
@@ -132,5 +142,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1em;
 }
 </style>

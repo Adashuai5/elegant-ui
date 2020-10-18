@@ -1,9 +1,6 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
-import Intro from "./views/Intro.vue";
-import GetStarted from "./views/GetStarted.vue";
-import Install from "./views/Install.vue";
 import { h } from "vue";
 import Markdown from "./components/Markdown.vue";
 

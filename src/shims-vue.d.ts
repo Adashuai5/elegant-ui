@@ -4,7 +4,7 @@ declare module "*.vue" {
   export default componentOptions;
 }
 
-declare module "*.demo.vue" {
+declare module "*.md" {
   import { ComponentOptions } from "vue";
   const componentOptions: ComponentOptions;
   export default componentOptions;

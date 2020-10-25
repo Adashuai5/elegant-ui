@@ -18,11 +18,7 @@
       <div class="elegant-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="elegant-tabs-content">
-      <component
-        class="elegant-tabs-content-item"
-        :is="current"
-        :key="current.props.title"
-      />
+      <component :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>

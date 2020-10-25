@@ -1,11 +1,5 @@
 <template>
   <div class="topnav">
-    <Icon
-      v-if="iconVisible"
-      iconLink="returns"
-      className="toggleMenu"
-      @click="toggleMenu"
-    />
     <router-link class="logo" to="/">
       <Icon iconLink="logo" className="logoE" />
       <span class="hide">legant</span>
@@ -20,28 +14,10 @@
 
 <script lang="ts">
 import Icon from "./Icon.vue";
-import { inject, ref, Ref } from "vue";
 
 export default {
   name: "Topnav",
   components: { Icon },
-  props: {
-    iconVisible: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  setup() {
-    const menuVisible = inject<Ref<boolean>>("menu-visible");
-    const toggleMenu = () => {
-      menuVisible.value = !menuVisible.value;
-    };
-
-    return {
-      menuVisible,
-      toggleMenu,
-    };
-  },
 };
 </script>
 
@@ -49,7 +25,7 @@ export default {
 $color: #1296d8;
 
 .topnav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -88,22 +64,7 @@ $color: #1296d8;
     }
   }
 
-  > .toggleMenu {
-    display: none;
-  }
-
   @media (max-width: 500px) {
-    > .toggleMenu {
-      width: 1.5em;
-      height: 1.5em;
-      display: inline-block;
-      position: absolute;
-      left: 1em;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-    }
-
     .hide {
       display: none;
     }

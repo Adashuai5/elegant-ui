@@ -17,11 +17,6 @@ import Button5Demo from "./Button5.demo.vue";
 export default {
   components: {
     Demo,
-    Button1Demo,
-    Button2Demo,
-    Button3Demo,
-    Button4Demo,
-    Button5Demo,
   },
   setup() {
     return {

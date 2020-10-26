@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-import "//at.alicdn.com/t/font_2113925_ne3hehcbrk.js";
 export default {
   name: "Icon",
   props: {

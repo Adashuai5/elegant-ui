@@ -3,13 +3,13 @@
 打开终端运行下列命令：
 
 ```
-npm install elegant-ui
+npm install elegant-user-interface
 ```
 
 或
 
 ```
-yarn add elegant-ui
+yarn add elegant-user-interface
 ```
 
 下一节：[开始使用](#/doc/get-started)

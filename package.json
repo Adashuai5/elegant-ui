@@ -1,5 +1,5 @@
 {
-  "name": "@adashuai5/elegant-ui",
+  "name": "elegant-user-interface",
   "version": "0.0.1",
   "files": [
     "dist/lib/*"

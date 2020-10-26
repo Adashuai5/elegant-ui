@@ -8,20 +8,37 @@
 
 <div align="center">
 
+An elegant UI components based on Vue3.
+
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Adashuai5/elegant-ui/blob/master/LICENSE)
 
 </div>
 
 ## 🖥 Environment Support
 
-TO DO.
+IE 11/ES6+
 
 ## 📦 Install
 
-TO DO
+```
+npm install elegant-user-interface
+```
+
+或
+
+```
+yarn add elegant-user-interface
+```
 
 ## 🔨 Usage
 
 ```
-TO DO
+import { Button } from 'elegant-user-interface'
+import 'elegant-user-interface/dist/index.css'
+
+export default {
+    components: {
+        Button
+    }
+}
 ```
